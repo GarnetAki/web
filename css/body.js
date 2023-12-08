@@ -4,5 +4,5 @@
 
 function ready(){
     document.getElementById("loadtime").textContent = "load time = " + 
-        (window.performance.timing.loadEventEnd - window.performance.timing.loadEventStart) + " sec";
+        (performance.mark('pageEnd').startTime / 1000).toFixed(3) + " sec";
 }
