@@ -51,3 +51,13 @@
     background: var(--c);
     color: #fff;
 }
+
+@media screen and (max-width: 600px) {
+    .setup-zone__button{
+        height: 80px;
+    }
+    .setup-zone__button img {
+        height: 60px;
+        width: 60px;
+    }
+}
