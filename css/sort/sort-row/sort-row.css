@@ -1,0 +1,7 @@
+.sort-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    width: 90%;
+    height: fit-content;
+}

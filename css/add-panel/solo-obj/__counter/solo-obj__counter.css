@@ -1,0 +1,41 @@
+.solo-obj__counter {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: 3%;
+    margin-top: 8px;
+    align-items: center;
+    min-width: fit-content;
+    min-height: fit-content;
+    width: 90%;
+    gap: 4px;
+    height: 12%;
+    font-family: 'Dosis-Regular', Roboto, sans-serif;
+    color: var(--white);
+    border: 10px solid rgba(75, 75, 75, 0.6);
+    border-radius: 10px;
+    background: rgba(61, 61, 61, 0.6);
+}
+
+.solo-obj__counter text {
+    width: 20%;
+    height: 60%;
+    text-align: center;
+}
+
+.solo-obj__counter img {
+    height: 28px;
+    width: 28px;
+}
+
+.solo-obj__counter input[inputMode=numeric]{
+    height: 80%;
+    width: 62px;
+    font-size: 36px;
+    border: 1px solid rgba(75, 75, 75, 1);
+    border-radius: 10px;
+    appearance: none;
+    background: none;
+    color: var(--white);
+    text-align: center;
+    cursor: text;
+}

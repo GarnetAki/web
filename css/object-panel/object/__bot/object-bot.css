@@ -1,0 +1,16 @@
+.object__bot {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    overflow-y: auto;
+    height: 100px;
+    margin-top: 4px;
+    width: 100%;
+    gap: 4px;
+    border-radius: 2px 2px 4px 4px;
+    font-family: 'Dosis-Regular', Roboto, sans-serif;
+    color: var(--white);
+    background: rgb(144, 144, 144, 0.2);
+}

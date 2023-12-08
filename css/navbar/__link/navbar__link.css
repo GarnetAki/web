@@ -1,0 +1,16 @@
+.navbar__link {
+    width: 200px;
+    max-width: 25%;
+    min-width: max-content;
+    height: 80px;
+    padding: 28px 8px 8px;
+    box-sizing: border-box;
+    color: var(--white);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.00);
+    text-decoration: none;
+    cursor: pointer;
+}
+.navbar__link.pressed {
+    background: rgba(0, 0, 0, 0.30);
+}

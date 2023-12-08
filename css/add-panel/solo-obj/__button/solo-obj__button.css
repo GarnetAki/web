@@ -1,0 +1,49 @@
+.solo-obj__button {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    text-align: center;
+    justify-content: left;
+    width: 56px;
+    height: 56px;
+    margin-right: 8px;
+    border: none;
+    cursor: pointer;
+
+    --b: 3px;
+    --s: .2em;
+    --c: var(--red-wine);
+    --_p: var(--s);
+    
+    padding: calc(.05em + var(--s)) calc(.3em + var(--s));
+    background:
+      conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--c) 0)
+      var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .2em;
+}
+
+.solo-obj__button img {
+    height: 28px;
+    width: 28px;
+}
+
+ 
+.solo-obj__button.pressed {
+    --_p: var(--s);
+    outline-color: var(--c);
+    outline-offset: .05em;
+}
+
+.solo-obj__button:hover,
+.solo-obj__button:focus-visible{
+    --_p: 0px;
+    outline-color: var(--c);
+    outline-offset: .05em;
+}
+  
+.solo-obj__button:active {
+    background: var(--c);
+    color: #fff;
+}

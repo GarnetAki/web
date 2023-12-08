@@ -1,0 +1,13 @@
+.upg-material__text {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: 20px;
+    border: 1px solid rgba(75, 75, 75, 1);
+    border-radius: 10px;
+    appearance: none;
+    background: none;
+    color: var(--white);
+    text-align: center;
+    cursor: text;
+}

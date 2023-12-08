@@ -1,0 +1,29 @@
+@font-face {
+    font-family: Dosis-Light;
+    src: url(../fonts/Dosis-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: Dosis-Regular;
+    src: url(../fonts/Dosis-Regular.ttf);
+}
+
+@font-face {
+    font-family: Dosis-Bold;
+    src: url(../fonts/Dosis-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: JS-LightItalic;
+    src: url(../fonts/JosefinSans-ExtraLightItalic.ttf);
+}
+
+@font-face {
+    font-family: JS-Regular;
+    src: url(../fonts/JosefinSans-Light.ttf);
+}
+
+@font-face {
+    font-family: JS-Bold;
+    src: url(../fonts/JosefinSans-Regular.ttf);
+}

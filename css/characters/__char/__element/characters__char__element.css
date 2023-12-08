@@ -1,0 +1,8 @@
+.characters__char__element {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 32px;
+    height: 32px;
+    z-index: 3;
+}

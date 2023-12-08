@@ -1,0 +1,6 @@
+.characters__char__background {
+    position: relative;
+    width: 120px;
+    height: 180px;
+    z-index: 1;
+}

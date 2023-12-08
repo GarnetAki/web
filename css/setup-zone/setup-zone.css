@@ -1,0 +1,9 @@
+.setup-zone {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    width: fit-content;
+    height: fit-content;
+    margin: 12px;
+    margin-left: 24px;
+}

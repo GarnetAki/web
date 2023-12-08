@@ -1,0 +1,8 @@
+.sort {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: top;
+    width: 95%;
+    margin: 2.5%;
+    height: fit-content;
+}

@@ -1,0 +1,9 @@
+.object {
+    position: relative;
+    margin: 8px;
+    width: 360px;
+    height: 420px;
+    border: 10px solid rgba(75, 75, 75, 0.6);
+    border-radius: 10px;
+    background: rgba(61, 61, 61, 0.6);
+}

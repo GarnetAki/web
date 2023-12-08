@@ -1,0 +1,41 @@
+.solo-obj__head {
+    display: flex;
+    align-items: center;
+    height: 82px;
+    width: 100%;
+    gap: 8px;
+    border-radius: 4px 4px 2px 2px;
+    font-family: 'Dosis-Regular', Roboto, sans-serif;
+    color: var(--white);
+}
+
+.solo-obj__head img {
+    width: 64px;
+    height: 64px;
+    margin-left: 8px;
+}
+
+.solo-obj__head text {
+    width: 65%;
+}
+
+
+.solo-obj__head.six_star {
+    background: rgba(220, 176, 17, 1);
+}
+
+.solo-obj__head.five_star {
+    background: rgba(219, 208, 169, 1);
+}
+
+.solo-obj__head.four_star {
+    background: rgba(118, 43, 189, 1);
+}
+
+.solo-obj__head.three_star {
+    background: rgba(88, 117, 224, 1);
+}
+
+.solo-obj__head.two_star {
+    background: rgba(65, 159, 79, 1);
+}

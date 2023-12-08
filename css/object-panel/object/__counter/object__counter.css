@@ -1,0 +1,43 @@
+.object__counter {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 8px;
+    align-items: center;
+    width: 380;
+    gap: 4px;
+    height: 12%;
+    font-family: 'Dosis-Regular', Roboto, sans-serif;
+    color: var(--white);
+    border: 10px solid rgba(75, 75, 75, 0.6);
+    border-radius: 10px;
+    background: rgba(61, 61, 61, 0.6);
+}
+
+.object__counter text {
+    width: 30%;
+    height: 60%;
+    text-align: center;
+}
+
+.object__counter a {
+    width: 90px;
+    height: 60%;
+    text-align: center;
+}
+
+.object__counter img {
+    height: 28px;
+    width: 28px;
+}
+
+.object__counter input[inputMode=numeric]{
+    height: 80%;
+    width: 32px;
+    border: 1px solid rgba(75, 75, 75, 1);
+    border-radius: 10px;
+    appearance: none;
+    background: none;
+    color: var(--white);
+    text-align: center;
+    cursor: text;
+}

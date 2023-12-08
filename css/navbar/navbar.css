@@ -1,0 +1,10 @@
+.navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    width: 100%;
+    height: 80px;
+    background-color: var(--bar-color); 
+    backdrop-filter: blur(5px);
+    font-family: 'JS-Bold', Roboto, sans-serif;
+}

@@ -1,0 +1,17 @@
+.upg-material {
+    position: relative;
+    align-items: center;
+    margin: 2px;
+    width: 40px;
+    height: 40px;
+    font-family: 'Dosis-Regular', Roboto, sans-serif;
+    color: var(--white);
+    border: 5px solid rgba(143, 143, 143, 0.6);
+    border-radius: 10px;
+    background: rgba(61, 61, 61, 0.6);
+}
+
+.upg-material img {
+    height: 100%;
+    width: 100%;
+}

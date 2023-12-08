@@ -1,0 +1,21 @@
+.add-panel__character {
+    display: flex;
+    font-family: 'Dosis-Regular', Roboto, sans-serif;
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0);
+    width: 90%;
+    height: 40px;
+    justify-content: left;
+    gap: 8px;
+    margin: 4px;
+}
+
+.add-panel__character img{
+    height: 35px;
+    width: 35px;
+}
+
+.add-panel__character:hover,
+.add-panel__character:focus-visible{
+    background: rgba(91, 91, 91, 1);
+}

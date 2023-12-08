@@ -1,0 +1,16 @@
+.material {
+    position: relative;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    font-family: 'Dosis-Regular', Roboto, sans-serif;
+    color: var(--white);
+    border: 10px solid rgba(75, 75, 75, 0.6);
+    border-radius: 10px;
+    background: rgba(61, 61, 61, 0.6);
+}
+
+.material img {
+    height: 100%;
+    width: 100%;
+}

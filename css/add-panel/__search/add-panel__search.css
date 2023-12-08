@@ -1,0 +1,40 @@
+.add-panel__search {
+    background-color: #242424;
+    font-family: 'Dosis-Regular', Roboto, sans-serif;
+    color: var(--white);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    border: none;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 1000px;
+    height: 40px;
+}
+
+.add-panel__search input[type=text]{
+    background-color: #242424;
+    font-family: 'Dosis-Regular', Roboto, sans-serif;
+    color: var(--white);
+    justify-content: left;
+    box-sizing: border-box;
+    border: none;
+    gap: 8px;
+    max-width: 100%;
+    width: 1000px;
+    height: 40px;
+}
+
+.add-panel__search button {
+    background-color: rgba(1, 0, 0, 0);
+    border: none;
+}
+
+.add-panel__search button img {
+    height: 35px;
+    width: 35px;
+}
+
+.add-panel__search button:hover {
+    background-color: #111111;
+}

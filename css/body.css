@@ -1,0 +1,21 @@
+:root {
+    --bar-color: rgba(54, 0, 0, 0.60);
+    --white: #ffffff;
+    --black: #000000;
+    --red-wine: #4c0303;
+    --background: url("../resources/backgrounds/background.png");
+}
+
+html{
+    height: 100%;
+}
+body {
+    position: relative;
+    background-image: var(--background);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: normal;
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}

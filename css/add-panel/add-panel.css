@@ -1,0 +1,14 @@
+.add-panel {
+    display: inline-flex;
+    flex-flow: row wrap;
+    position: fixed;
+    left: 30%;
+    overflow: auto;
+    top: 96px;
+    width: 40%;
+    height: 70%;
+    border: 10px solid rgba(75, 75, 75, 1);
+    border-radius: 10px;
+    background: rgba(51, 51, 51, 1);
+    display: none;
+}

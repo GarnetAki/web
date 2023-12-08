@@ -1,0 +1,51 @@
+.object__cnt-button {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    align-items: center;
+    text-align: center;
+    justify-content: left;
+    width: 28px;
+    height: 32px;
+    border: none;
+    cursor: pointer;
+
+    --b: 3px;
+    --s: .2em;
+    --c: var(--red-wine);
+    --_p: var(--s);
+    
+    background:
+      conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--c) 0)
+      var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .2em;
+}
+
+.object__cnt-button img {
+    position: absolute;
+    left: 1px;
+    top: 2px;
+    width: 26px;
+    height: 28px;
+}
+
+ 
+.object__cnt-button.pressed {
+    --_p: var(--s);
+    outline-color: var(--c);
+    outline-offset: .05em;
+}
+
+.object__cnt-button:hover,
+.object__cnt-button:focus-visible{
+    --_p: 0px;
+    outline-color: var(--c);
+    outline-offset: .05em;
+}
+
+.object__cnt-button:active {
+    background: var(--c);
+    color: #fff;
+}

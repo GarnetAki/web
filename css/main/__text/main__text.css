@@ -1,0 +1,15 @@
+.main__text {
+    width: 80%;
+    /* min-width: fit-content; */
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    text-align: left;
+    border: 2px solid var(--white);
+    background: rgba(255, 255, 255, 0.20);
+    text-shadow: 2px 0 var(--black), -2px 0 var(--black), 0 2px var(--black), 0 -2px var(--black),
+    1px 0 var(--black), -1px 0 var(--black), 0 1px var(--black), 0 -1px var(--black);
+    color: var(--white);
+    font-family: Dosis-Regular, Tahoma, sans-serif;
+}

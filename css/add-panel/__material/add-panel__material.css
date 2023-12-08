@@ -1,0 +1,26 @@
+.add-panel__material {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 64px;
+    height: 96px;
+    justify-content: top;
+    gap: 8px;
+    margin: 4px;
+}
+
+.add-panel__material img{
+    height: 64px;
+    width: 64px;
+}
+
+.add-panel__material input[inputMode=numeric] {
+    height: 14px;
+    width: 62px;
+    border: 1px solid rgba(75, 75, 75, 1);
+    border-radius: 10px;
+    appearance: none;
+    background: none;
+    color: var(--white);
+    text-align: center;
+    cursor: text;
+}
