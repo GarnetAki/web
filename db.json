@@ -1,31 +1,28 @@
 {
-    "posts": [
-      {
-        "id": 1,
-        "title": "Post 1"
-      },
-      {
-        "id": 2,
-        "title": "Post 2"
-      },
-      {
-        "id": 3,
-        "title": "Post 3"
-      }
-    ],
-    "comments": [
-      {
-        "id": 1,
-        "body": "some comment",
-        "postId": 1
-      },
-      {
-        "id": 2,
-        "body": "some comment",
-        "postId": 1
-      }
-    ],
-    "profile": {
-      "name": "typicode"
-    }
-  }
+    "Characters": [
+        {
+            "id": 0,
+            "name": "Eternity",
+            "icon_path": "resources/chars/Eternity_Icon.webp",
+            "image_path": "resources/chars/Eternity.webp",
+            "element": "mineral",
+            "dmg_type": "reality",
+            "rarity": 6,
+            "tags": [
+                "Nasty Wound", "DPS"
+            ]
+        },
+        {
+            "id": 1,
+            "name": "APPLe",
+            "icon_path": "resources/chars/APPLe_Icon.webp",
+            "image_path": "resources/chars/APPLe.webp",
+            "element": "star",
+            "dmg_type": "mental",
+            "rarity": 4,
+            "tags": [
+                "Heal", "DPS"
+            ]
+        }
+    ]
+}
