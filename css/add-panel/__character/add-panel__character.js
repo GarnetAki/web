@@ -30,8 +30,8 @@ async function soloChar(e){
                     <button class="solo-obj__button"> \
                         <img src=\"resources/elements/ok.png" alt="Ok"> \
                     </button> \
-                    <button class=\"solo-obj__button\"> \
-                        <img src=\"resources/elements/cancel.png\" onclick=\"addClose(this)\" alt="Cancel"> \
+                    <button class=\"solo-obj__button\" onclick=\"addClose(this)\"> \
+                        <img src=\"resources/elements/cancel.png\" alt="Cancel"> \
                     </button> \
                 </div> \
                 <div class=\"solo-obj__counter\"> \
@@ -97,36 +97,36 @@ async function soloPsyhc(e){
     var panel = document.getElementById("add");
     panel.innerHTML = '';
     panel.innerHTML += "<div class=\"add-panel__preloader\"><div></div></div>";
-    var chars;
+    var psychs;
     await fetch('https://my-json-server.typicode.com/GarnetAki/web/Psychubes')
         .then((response) => {
             return response.json();
         })
         .then((data) => {
-            chars = data;
+            psychs = data;
         });
 
     panel.innerHTML = panel.innerHTML.replace("<div class=\"add-panel__preloader\"><div></div></div>", "");
     
     console.log(e.textContent);
-    for (var char in chars) {
-        if (chars[char]["name"] == e.textContent){
+    for (var psych in psychs) {
+        if (psychs[psych]["name"] == e.textContent){
             var rar = "six_star";
-            if (chars[char]["rarity"] == 2) rar = "two_star";
-            if (chars[char]["rarity"] == 3) rar = "three_star";
-            if (chars[char]["rarity"] == 4) rar = "four_star";
-            if (chars[char]["rarity"] == 5) rar = "five_star";
+            if (psychs[psych]["rarity"] == 2) rar = "two_star";
+            if (psychs[psych]["rarity"] == 3) rar = "three_star";
+            if (psychs[psych]["rarity"] == 4) rar = "four_star";
+            if (psychs[psych]["rarity"] == 5) rar = "five_star";
 
             panel.innerHTML += 
             '<div class=\"solo-obj\">\
                 <div class=\"solo-obj__head ' + rar + '\"> \
-                    <img src=\"' + chars[char]["icon_path"] + '\" alt=\"' + chars[char]["name"] + 'Icon\"> \
-                    <text>' + chars[char]["name"] + '</text> \
+                    <img src=\"' + psychs[psych]["icon_path"] + '\" alt=\"' + psychs[psych]["name"] + 'Icon\"> \
+                    <text>' + psychs[psych]["name"] + '</text> \
                     <button class="solo-obj__button"> \
-                        <img src=\"resources/elements/ok.png" alt="Ok"> \
+                        <img src=\"resources/elements/ok.png" onclick=\"addClose(this)\" alt="Ok"> \
                     </button> \
                     <button class=\"solo-obj__button\"> \
-                        <img src=\"resources/elements/cancel.png\" onclick=\"addClose(this)\" alt="Cancel"> \
+                        <img src=\"resources/elements/cancel.png\" alt="Cancel"> \
                     </button> \
                 </div> \
                 <div class=\"solo-obj__counter\"> \
