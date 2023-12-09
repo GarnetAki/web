@@ -1,0 +1,6 @@
+.calc-head__main-part {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 90%;
+    min-width: fit-content;
+}

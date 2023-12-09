@@ -1,11 +1,12 @@
 .inventory-zone {
     display: flex;
     flex-flow: row wrap;
+    width: fit-content;
     margin: 12px;
     margin-left: 24px;
     overflow-y: auto;
     gap: 4px;
-    width: 80%;
+    width: 90%;
     height: 140px;
     border: 10px solid rgba(75, 75, 75, 0.6);
     border-radius: 10px;

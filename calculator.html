@@ -12,16 +12,19 @@
 
     <link href="/web/css/navbar/navbar.css" rel="stylesheet">
     <link href="/web/css/navbar/__link/navbar__link.css" rel="stylesheet">
+    
+    <link href="/web/css/calc-head/calc-head.css" rel="stylesheet">
+    <link href="/web/css/calc-head/__main-part/calc-head__main-part.css" rel="stylesheet">
 
-    <link href="/web/css/setup-zone/setup-zone.css" rel="stylesheet">
-    <link href="/web/css/setup-zone/__button/setup-zone__button.css" rel="stylesheet">
+    <link href="/web/css/calc-head/__main-part/setup-zone/setup-zone.css" rel="stylesheet">
+    <link href="/web/css/calc-head/__main-part/setup-zone/__button/setup-zone__button.css" rel="stylesheet">
 
-    <link href="/web/css/setting-zone/setting-zone.css" rel="stylesheet">
-    <link href="/web/css/setting-zone/__button/setting-zone__button.css" rel="stylesheet">
+    <link href="/web/css/calc-head/setting-zone/setting-zone.css" rel="stylesheet">
+    <link href="/web/css/calc-head/setting-zone/__button/setting-zone__button.css" rel="stylesheet">
 
-    <link href="/web/css/inventory-zone/inventory-zone.css" rel="stylesheet">
-    <link href="/web/css/inventory-zone/material/material.css" rel="stylesheet">
-    <link href="/web/css/inventory-zone/material/__text/material__text.css" rel="stylesheet">
+    <link href="/web/css/calc-head/__main-part/inventory-zone/inventory-zone.css" rel="stylesheet">
+    <link href="/web/css/calc-head/__main-part/inventory-zone/material/material.css" rel="stylesheet">
+    <link href="/web/css/calc-head/__main-part/inventory-zone/material/__text/material__text.css" rel="stylesheet">
 
     <link href="/web/css/add-panel/add-panel.css" rel="stylesheet">
     <link href="/web/css/add-panel/__search/add-panel__search.css" rel="stylesheet">
@@ -49,8 +52,8 @@
     <link href="/web/css/load-info/load-info.css" rel="stylesheet">
 
     <script src="/web/css/body.js"></script>
-    <script src="/web/css/setup-zone/__button/setup-zone__button.js"></script>
-    <script src="/web/css/setting-zone/__button/setting-zone__button.js"></script>
+    <script src="/web/css/calc-head/setting-zone/__button/setting-zone__button.js"></script>
+    <script src="/web/css/calc-head/__main-part/setup-zone/__button/setup-zone__button.js"></script>
     <script src="/web/css/add-panel/__button/add-panel__button.js"></script>
     <script src="/web/css/add-panel/__button/__close/add-panel__button__close.js"></script>
 </head>
@@ -61,40 +64,44 @@
         <a class="navbar__link pressed" href="calculator.html">Calculator</a>
         <a class="navbar__link" href="databank.html">Data Bank</a>
     </nav>
-    <section class="setting-zone">
-        <input type="file" id="upload" hidden/>
-        <button class="setting-zone__button">
-            <label for="upload">
-                <img src="/web/resources/elements/import.png">
-            </labelfor>
-        </button>
-        <input type="file" id="export" hidden/>
-        <button class="setting-zone__button">
-            <label for="export">
-                <img src="/web/resources/elements/download.png">
-            </labelfor>
-        </button>
-        <button class="setting-zone__button" onclick="clearAll(this)">
-            <img src="/web/resources/elements/delete.png">
-        </button>
-    </section>
     <section class="add-panel" id="add">
     </section>
-    <section class="setup-zone">
-        <button class="setup-zone__button" onclick="addChar(this)">
-            <img src="/web/resources/elements/plus.png">
-            Add Character
-        </button>
-        <button class="setup-zone__button" onclick="addPsychube(this)">
-            <img src="/web/resources/elements/plus.png">
-            Add Psychube
-        </button>
-        <button class="setup-zone__button" onclick="addMaterials(this)">
-            <img src="/web/resources/elements/plus.png">
-            Inventory
-        </button>
-    </section>
-    <section class="inventory-zone">
+    <section class="calc-head">
+        <section class="calc-head__main-part">
+            <div class="setup-zone">
+                <button class="setup-zone__button" onclick="addChar(this)">
+                    <img src="/web/resources/elements/plus.png">
+                    Add Character
+                </button>
+                <button class="setup-zone__button" onclick="addPsychube(this)">
+                    <img src="/web/resources/elements/plus.png">
+                    Add Psychube
+                </button>
+                <button class="setup-zone__button" onclick="addMaterials(this)">
+                    <img src="/web/resources/elements/plus.png">
+                    Inventory
+                </button>
+            </div>
+            <div class="inventory-zone">
+            </div>
+        </section>
+        <div class="setting-zone">
+            <input type="file" id="upload" hidden/>
+            <button class="setting-zone__button">
+                <label for="upload">
+                    <img src="/web/resources/elements/import.png">
+                </labelfor>
+            </button>
+            <input type="file" id="export" hidden/>
+            <button class="setting-zone__button">
+                <label for="export">
+                    <img src="/web/resources/elements/download.png">
+                </labelfor>
+            </button>
+            <button class="setting-zone__button" onclick="clearAll(this)">
+                <img src="/web/resources/elements/delete.png">
+            </button>
+        </div>
     </section>
     <section class="object-panel">
     </section>
