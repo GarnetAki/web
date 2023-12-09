@@ -123,9 +123,9 @@ async function soloPsyhc(e){
                     <img src=\"' + psychs[psych]["icon_path"] + '\" alt=\"' + psychs[psych]["name"] + 'Icon\"> \
                     <text>' + psychs[psych]["name"] + '</text> \
                     <button class="solo-obj__button"> \
-                        <img src=\"resources/elements/ok.png" onclick=\"addClose(this)\" alt="Ok"> \
+                        <img src=\"resources/elements/ok.png" alt="Ok"> \
                     </button> \
-                    <button class=\"solo-obj__button\"> \
+                    <button class=\"solo-obj__button\" onclick=\"addClose(this)\"> \
                         <img src=\"resources/elements/cancel.png\" alt="Cancel"> \
                     </button> \
                 </div> \
