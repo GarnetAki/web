@@ -3,8 +3,8 @@
         {
             "id": 0,
             "name": "Eternity",
-            "icon_path": "resources/chars/Eternity_Icon.webp",
-            "image_path": "resources/chars/Eternity.webp",
+            "icon_path": "/web/resources/chars/Eternity_Icon.webp",
+            "image_path": "/web/resources/chars/Eternity.webp",
             "element": "mineral",
             "dmg_type": "reality",
             "rarity": 6,
@@ -15,8 +15,8 @@
         {
             "id": 1,
             "name": "APPLe",
-            "icon_path": "resources/chars/APPLe_Icon.webp",
-            "image_path": "resources/chars/APPLe.webp",
+            "icon_path": "/web/resources/chars/APPLe_Icon.webp",
+            "image_path": "/web/resources/chars/APPLe.webp",
             "element": "star",
             "dmg_type": "mental",
             "rarity": 4,

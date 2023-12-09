@@ -17,14 +17,14 @@
 }
 
 .solo-obj__counter text {
-    width: 20%;
+    width: 110px;
     height: 60%;
     text-align: center;
 }
 
 .solo-obj__counter img {
-    height: 28px;
-    width: 28px;
+    height: 24px;
+    width: 24px;
 }
 
 .solo-obj__counter input[inputMode=numeric]{

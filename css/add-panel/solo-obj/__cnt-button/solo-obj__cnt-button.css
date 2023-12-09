@@ -4,9 +4,8 @@
     align-items: center;
     text-align: center;
     justify-content: left;
-    width: 10%;
-    min-width: 28px;
-    height: 100%;
+    width: 28px;
+    height: 28px;
     border: none;
     cursor: pointer;
 
@@ -26,8 +25,8 @@
 
 .solo-obj__cnt-button img {
     align-items: center;
-    height: 90%;
-    width: 96%;
+    height: 85%;
+    width: 105%;
 }
 
  
