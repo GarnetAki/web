@@ -1,7 +1,7 @@
 async function addChar(e) {
     var buttons = document.getElementsByClassName("setup-zone").item(0);
     
-    for (child of buttons.children) {
+    for (var child of buttons.children) {
         if (child.classList.contains("pressed"))
             child.classList.remove("pressed");
     }
@@ -33,7 +33,7 @@ async function addChar(e) {
     }
 }
 
-function addPsychube(e) {
+async function addPsychube(e) {
     var buttons = document.getElementsByClassName("setup-zone").item(0);
 
     for (var child of buttons.children) {
@@ -51,12 +51,27 @@ function addPsychube(e) {
     panel.innerHTML += "<div class=\"add-panel__search\"><button><img src=\"resources/elements/search.png\"></button><input type=\"text\" placeholder=\"Search\"></div>";
 
     panel.innerHTML += "<div class=\"add-panel__preloader\"><div></div></div>";
+    var psys;
+    await fetch('https://my-json-server.typicode.com/GarnetAki/web/Psychubes')
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            psys = data;
+        });
+
+    panel.innerHTML = panel.innerHTML.replace("<div class=\"add-panel__preloader\"><div></div></div>", "");
+    
+    for (var psy in psys) {
+        panel.innerHTML += '<div class=\"add-panel__character\" onclick=\"soloPsyhc(this)\"><img src=\"' 
+        + psys[psy]["icon_path"] + '">' + psys[psy]["name"] + '</div>';
+    }
 }
 
 function addMaterials(e) {
     var buttons = document.getElementsByClassName("setup-zone").item(0);
 
-    for (child of buttons.children) {
+    for (var child of buttons.children) {
         if (child.classList.contains("pressed"))
             child.classList.remove("pressed");
     }

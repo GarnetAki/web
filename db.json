@@ -24,5 +24,19 @@
                 "Heal", "DPS"
             ]
         }
+    ],
+    "Psychubes": [
+        {
+            "id": 0,
+            "name": "A Free Heart",
+            "icon_path": "/web/resources/psychubes/AFH.webp",
+            "rarity": 5
+        },
+        {
+            "id": 1,
+            "name": "Brave New World",
+            "icon_path": "/web/resources/psychubes/BNW.webp",
+            "rarity": 6
+        }
     ]
 }
