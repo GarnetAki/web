@@ -1,7 +1,8 @@
 .add-panel {
-    display: inline-flex;
+    /* display: inline-flex; */
     flex-flow: row wrap;
     position: fixed;
+    align-content: flex-start;
     left: 30%;
     overflow: auto;
     top: 96px;

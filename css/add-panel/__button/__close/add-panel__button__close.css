@@ -1,16 +1,19 @@
-.setup-zone__button {
+.add-panel__button__close {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     text-align: center;
-    justify-content: left;
-    font-family: 'Dosis-Regular', Roboto, sans-serif;
-    width: fit-content;
-    gap: 8px;
-    height: 64px;
-    margin: 8px;
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-family: 'Dosis-Bold', Roboto, sans-serif;
+    gap: 0px;
+    margin: 0px;
+    height: 15px;
+    width: 15px;
     border: none;
-    letter-spacing: 1px;
+    letter-spacing: 4px;
     color: var(--white);
     cursor: pointer;
 
@@ -28,26 +31,25 @@
     outline-offset: .2em;
 }
 
-.setup-zone__button img {
-    height: 48px;
-    width: 48px;
+.add-panel__button__close img {
+    height: 10px;
+    width: 10px;
 }
 
- 
-.setup-zone__button.pressed {
+.add-panel__button__close.pressed {
     --_p: var(--s);
     outline-color: var(--c);
     outline-offset: .05em;
 }
 
-.setup-zone__button:hover,
-.setup-zone__button:focus-visible{
+.add-panel__button__close:hover,
+.add-panel__button__close:focus-visible{
     --_p: 0px;
     outline-color: var(--c);
     outline-offset: .05em;
 }
   
-.setup-zone__button:active {
+.add-panel__button__close:active {
     background: var(--c);
     color: #fff;
 }

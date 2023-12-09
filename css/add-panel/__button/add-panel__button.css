@@ -5,10 +5,10 @@
     text-align: center;
     justify-content: center;
     font-family: 'Dosis-Bold', Roboto, sans-serif;
-    gap: 8px;
+    gap: 2.5%;
     height: 64px;
     width: 45%;
-    margin: 8px;
+    margin: 2.5%;
     border: none;
     letter-spacing: 4px;
     color: var(--white);

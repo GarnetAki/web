@@ -50,10 +50,3 @@
     background: var(--c);
     color: #fff;
 }
-
-@media screen and (max-width: 600px) {
-    .sort-row__button{
-        width: 80px;
-        height: 80px;
-    }
-}

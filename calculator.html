@@ -5,7 +5,7 @@
     <title>Reverse</title>
     <link rel="icon" type="image/x-icon" href="/web/resources/favicon.ico">
     <meta name="description" content="Resources calculator for Reverse:1999.">
-    <meta name="keywords" content="Reverse:1999, reverse calculator">  
+    <meta name="keywords" content="Reverse:1999, reverse calculator"> 
 
     <link href="/web/css/body.css" rel="stylesheet">
     <link href="/web/css/fonts.css" rel="stylesheet">
@@ -28,6 +28,7 @@
     <link href="/web/css/add-panel/__character/add-panel__character.css" rel="stylesheet">
     <link href="/web/css/add-panel/__material/add-panel__material.css" rel="stylesheet">
     <link href="/web/css/add-panel/__button/add-panel__button.css" rel="stylesheet">
+    <link href="/web/css/add-panel/__button/__close/add-panel__button__close.css" rel="stylesheet">
     
     <link href="/web/css/add-panel/solo-obj/solo-obj.css" rel="stylesheet">
     <link href="/web/css/add-panel/solo-obj/__counter/solo-obj__counter.css" rel="stylesheet">
@@ -48,6 +49,10 @@
     <link href="/web/css/load-info/load-info.css" rel="stylesheet">
 
     <script src="/web/css/body.js"></script>
+    <script src="/web/css/setup-zone/__button/setup-zone__button.js"></script>
+    <script src="/web/css/setting-zone/__button/setting-zone__button.js"></script>
+    <script src="/web/css/add-panel/__button/add-panel__button.js"></script>
+    <script src="/web/css/add-panel/__button/__close/add-panel__button__close.js"></script>
 </head>
 
 <body>
@@ -69,22 +74,22 @@
                 <img src="/web/resources/elements/download.png">
             </labelfor>
         </button>
-        <button class="setting-zone__button">
+        <button class="setting-zone__button" onclick="clearAll(this)">
             <img src="/web/resources/elements/delete.png">
         </button>
     </section>
-    <section class="add-panel">
+    <section class="add-panel" id="add">
     </section>
     <section class="setup-zone">
-        <button class="setup-zone__button">
+        <button class="setup-zone__button" onclick="addChar(this)">
             <img src="/web/resources/elements/plus.png">
             Add Character
         </button>
-        <button class="setup-zone__button">
+        <button class="setup-zone__button" onclick="addPsychube(this)">
             <img src="/web/resources/elements/plus.png">
             Add Psychube
         </button>
-        <button class="setup-zone__button">
+        <button class="setup-zone__button" onclick="addMaterials(this)">
             <img src="/web/resources/elements/plus.png">
             Inventory
         </button>

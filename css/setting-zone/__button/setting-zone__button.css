@@ -50,10 +50,3 @@
     background: var(--c);
     color: #fff;
 }
-
-@media screen and (max-width: 600px) {
-    .setup-zone__button{
-        height: 80px;
-        width: 80px;
-    }
-}
