@@ -1,42 +1,54 @@
 {
     "Characters": [
-        {
-            "id": 0,
-            "name": "Eternity",
-            "icon_path": "/web/resources/chars/Eternity_Icon.webp",
-            "image_path": "/web/resources/chars/Eternity.webp",
-            "element": "mineral",
-            "dmg_type": "reality",
-            "rarity": 6,
-            "tags": [
-                "Nasty Wound", "DPS"
-            ]
-        },
-        {
-            "id": 1,
-            "name": "APPLe",
-            "icon_path": "/web/resources/chars/APPLe_Icon.webp",
-            "image_path": "/web/resources/chars/APPLe.webp",
-            "element": "star",
-            "dmg_type": "mental",
-            "rarity": 4,
-            "tags": [
-                "Heal", "DPS"
-            ]
-        }
+      {
+        "id": 0,
+        "name": "Eternity",
+        "icon_path": "/web/resources/chars/Eternity_Icon.webp",
+        "image_path": "/web/resources/chars/Eternity.webp",
+        "element": "mineral",
+        "dmg_type": "reality",
+        "rarity": 6,
+        "tags": [
+          "Nasty Wound", "DPS"
+        ]
+      },
+      {
+        "id": 1,
+        "name": "APPLe",
+        "icon_path": "/web/resources/chars/APPLe_Icon.webp",
+        "image_path": "/web/resources/chars/APPLe.webp",
+        "element": "star",
+        "dmg_type": "mental",
+        "rarity": 4,
+        "tags": [
+          "Heal", "DPS"
+        ]
+      }
     ],
     "Psychubes": [
-        {
-            "id": 0,
-            "name": "A Free Heart",
-            "icon_path": "/web/resources/psychubes/AFH.webp",
-            "rarity": 5
-        },
-        {
-            "id": 1,
-            "name": "Brave New World",
-            "icon_path": "/web/resources/psychubes/BNW.webp",
-            "rarity": 6
-        }
+      {
+        "id": 0,
+        "name": "A Free Heart",
+        "icon_path": "/web/resources/psychubes/AFH.webp",
+        "rarity": 5
+      },
+      {
+        "id": 1,
+        "name": "Brave New World",
+        "icon_path": "/web/resources/psychubes/BNW.webp",
+        "rarity": 6
+      }
+    ],
+    "Materials": [
+      {
+        "id": 0,
+        "name": "Sharpodonty",
+        "icon_path": "/web/resources/materials/sharpodonty.webp"
+      },
+      {
+        "id": 1,
+        "name": "Fruit of Good and Evil",
+        "icon_path": "/web/resources/materials/fruit.webp"
+      }
     ]
-}
+  }
