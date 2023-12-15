@@ -1,6 +1,10 @@
 async function addChar(e) {
+    var buttons = document.getElementsByClassName("setup-zone").item(0);
+    for (var child of buttons.children) {
+        if (child.classList.contains("pressed"))
+            return;
+    }
     if (!e.classList.contains("pressed")){
-        var buttons = document.getElementsByClassName("setup-zone").item(0);
     
         for (var child of buttons.children) {
             if (child.classList.contains("pressed"))
@@ -45,8 +49,12 @@ async function addChar(e) {
 }
 
 async function addPsychube(e) {
+    var buttons = document.getElementsByClassName("setup-zone").item(0);
+    for (var child of buttons.children) {
+        if (child.classList.contains("pressed"))
+            return;
+    }
     if (!e.classList.contains("pressed")){
-        var buttons = document.getElementsByClassName("setup-zone").item(0);
 
         for (var child of buttons.children) {
             if (child.classList.contains("pressed"))
@@ -91,8 +99,12 @@ async function addPsychube(e) {
 }
 
 async function addMaterials(e) {
+    var buttons = document.getElementsByClassName("setup-zone").item(0);
+    for (var child of buttons.children) {
+        if (child.classList.contains("pressed"))
+            return;
+    }
     if (!e.classList.contains("pressed")){
-        var buttons = document.getElementsByClassName("setup-zone").item(0);
 
         for (var child of buttons.children) {
             if (child.classList.contains("pressed"))

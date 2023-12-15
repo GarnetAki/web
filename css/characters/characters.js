@@ -1,6 +1,16 @@
 !function () {
     document.addEventListener("DOMContentLoaded", getAllChars);
+    document.addEventListener("DOMContentLoaded", addKeysDB);
 }();
+
+function addKeysDB(){
+    key('c', function(){
+        setSelected(document.getElementById("sort-rar").childNodes[1]);
+        setSelected(document.getElementById("sort-elem").childNodes[1]);
+        setSelected(document.getElementById("sort-type").childNodes[1]);
+        setSelected(document.getElementById("sort-tag").childNodes[1]);
+    });
+}
 
 async function getAllChars(){
     var panel = document.getElementsByClassName("characters").item(0);
@@ -24,7 +34,7 @@ async function getAllChars(){
         return
     }
     
-    panel.innerHTML = panel.innerHTML.replace("<div class=\"add-panel__preloader\"><div></div></div>", "");
+    panel.innerHTML = "";
     
     for (var char in chars) {
         if (checkSortInfo(chars[char]["rarity"], chars[char]["element"], chars[char]["dmg_type"], chars[char]["tags"])){

@@ -8,5 +8,5 @@ function setSelected(e) {
         }
     }
     e.classList.toggle("pressed");
-    getAllChars()
+    getAllChars();
 }

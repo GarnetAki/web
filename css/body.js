@@ -3,6 +3,9 @@
 }();
 
 function ready(){
+    key('1', function(){ document.location.replace('index.html') });
+    key('2', function(){ document.location.replace('calculator.html') });
+    key('3', function(){ document.location.replace('databank.html') });
     document.getElementById("loadtime").textContent = "load time = " + 
         (performance.mark('pageEnd').startTime / 1000).toFixed(3) + " sec";
 }
