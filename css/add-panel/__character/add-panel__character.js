@@ -46,7 +46,7 @@ async function soloChar(e){
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
                         <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <input inputmode=\"numeric\" id=\"' + chars[char]["name"] + 'LvlFrom\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"60\" value=\"1\" type=\"number\"> \
                     <button class="solo-obj__cnt-button" onclick=\"cntPlus(this)\"> \
                         <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
@@ -54,7 +54,7 @@ async function soloChar(e){
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
                         <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <input inputmode=\"numeric\" id=\"' + chars[char]["name"] + 'LvlTo\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"60\" value=\"1\" type=\"number\"> \
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntPlus(this)\"> \
                         <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
@@ -64,7 +64,7 @@ async function soloChar(e){
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
                         <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <input inputmode=\"numeric\" id=\"' + chars[char]["name"] + 'InsFrom\" required pattern=\"[0-9]{,1}+$\" min=\"0\" max=\"3\" value=\"0\" type=\"number\"> \
                     <button class="solo-obj__cnt-button" onclick=\"cntPlus(this)\"> \
                         <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
@@ -72,7 +72,7 @@ async function soloChar(e){
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
                         <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <input inputmode=\"numeric\" id=\"' + chars[char]["name"] + 'InsTo\" required pattern=\"[0-9]{,1}+$\" min=\"0\" max=\"3\" value=\"0\" type=\"number\"> \
                     <button class=\"solo-obj__cnt-button\ onclick=\"cntPlus(this)\""> \
                         <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
@@ -82,7 +82,7 @@ async function soloChar(e){
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
                         <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <input inputmode=\"numeric\" id=\"' + chars[char]["name"] + 'ResFrom\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"10\" value=\"1\" type=\"number\"> \
                     <button class="solo-obj__cnt-button" onclick=\"cntPlus(this)\"> \
                         <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
@@ -90,7 +90,7 @@ async function soloChar(e){
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
                         <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <input inputmode=\"numeric\" id=\"' + chars[char]["name"] + 'ResTo\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"10\" value=\"1\" type=\"number\"> \
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntPlus(this)\"> \
                         <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
@@ -148,7 +148,7 @@ async function soloPsyhc(e){
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
                         <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <input inputmode=\"numeric\" id=\"' + psychs[psych]["name"] + 'LvlFrom\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"60\" value=\"1\" type=\"number\"> \
                     <button class="solo-obj__cnt-button" onclick=\"cntPlus(this)\"> \
                         <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
@@ -156,7 +156,7 @@ async function soloPsyhc(e){
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
                         <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <input inputmode=\"numeric\" id=\"' + psychs[psych]["name"] + 'LvlTo\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"60\" value=\"1\" type=\"number\"> \
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntPlus(this)\"> \
                         <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
@@ -166,7 +166,7 @@ async function soloPsyhc(e){
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
                         <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <input inputmode=\"numeric\" id=\"' + psychs[psych]["name"] + 'AscFrom\" required pattern=\"[0-9]{,1}+$\" min=\"0\" max=\"3\" value=\"0\" type=\"number\"> \
                     <button class="solo-obj__cnt-button" onclick=\"cntPlus(this)\"> \
                         <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
@@ -174,7 +174,7 @@ async function soloPsyhc(e){
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
                         <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <input inputmode=\"numeric\" id=\"' + psychs[psych]["name"] + 'AscTo\" required pattern=\"[0-9]{,1}+$\" min=\"0\" max=\"3\" value=\"0\" type=\"number\"> \
                     <button class=\"solo-obj__cnt-button\" onclick=\"cntPlus(this)\"> \
                         <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
