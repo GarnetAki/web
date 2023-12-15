@@ -127,12 +127,11 @@ async function addMaterials(e) {
             return
         }
         
-        
         panel.innerHTML = panel.innerHTML.replace("<div class=\"add-panel__preloader\"><div></div></div>", "");
         
         for (var material in materials) {
             panel.innerHTML += '<div class=\"add-panel__material\"> \
-                    <img src=\"' + psychs[material]["icon_path"] + '\"> \
+                    <img src=\"' + materials[material]["icon_path"] + '\"> \
                     <input inputmode="numeric" min="0" value="0"> \
                 </div>'
         }
