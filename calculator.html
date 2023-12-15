@@ -65,6 +65,7 @@
     <script src="/web/css/add-panel/solo-obj/__button/solo-obj__button.js"></script>
     <script src="/web/css/object-panel/object/__button/object__button.js"></script>
     <script src="/web/css/uikit/uikit.min.js"></script>
+    <script src="/web/css/keymaster/keymaster.js"></script>
 </head>
 
 <body>
@@ -78,15 +79,15 @@
     <section class="calc-head">
         <section class="calc-head__main-part">
             <div class="setup-zone">
-                <button class="setup-zone__button" onclick="addChar(this)">
+                <button class="setup-zone__button" id="add-char-btn" onclick="addChar(this)">
                     <img src="/web/resources/elements/plus-circle.png">
                     Add Character
                 </button>
-                <button class="setup-zone__button" onclick="addPsychube(this)">
+                <button class="setup-zone__button" id="add-psych-btn" onclick="addPsychube(this)">
                     <img src="/web/resources/elements/plus-circle.png">
                     Add Psychube
                 </button>
-                <button class="setup-zone__button" onclick="addMaterials(this)">
+                <button class="setup-zone__button" id="add-inv-btn" onclick="addMaterials(this)">
                     <img src="/web/resources/elements/plus-circle.png">
                     Inventory
                 </button>
