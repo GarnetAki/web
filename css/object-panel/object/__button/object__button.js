@@ -4,75 +4,81 @@ function deleteObj(e) {
 }
 
 function redactChar(e, name, path, rar, lvlFrom, lvlTo, insFrom, insTo, resFrom, resTo) {
-    var obj = e.parentNode.parentNode.parentNode
-
-    obj.innerHTML = '<div class=\"object\"> \
-        <div class=\"object__head ' + rar + '\"> \
-            <img src=\"' + path + '\" alt=\"' + name + 'Icon\"> \
-            <text>' + name + '</text> \
-            <button class=\"object__button\" onclick=\"saveRedactChar(this, \'' + name + '\', \'' + path + '\', \'' + rar +  '\')\"> \
-                <img src=\"/web/resources/elements/ok.png\" alt=\"Ok\"> \
-            </button> \
-            <button class=\"object__button\" onclick=\"cancelRedactChar(this, \'' + name + '\', \'' + path + '\', \'' + rar + 
-            '\', ' + lvlFrom + ', ' + lvlTo + ', ' + insFrom + ', ' + insTo + ', ' + resFrom + ', ' + resTo + ')\"> \
-                <img src=\"/web/resources/elements/cancel.png\" alt=\"Cancel\"> \
-            </button> \
-        </div> \
-        <div class=\"object__counter\"> \
-            <text>Level:</text> \
-            <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
-                <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
-            </button> \
-            <input inputmode=\"numeric\" id=\"' + name + 'LvlFrom\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"60\" value=\"' + lvlFrom + '\" type=\"number\"> \
-            <button class=\"object__cnt-button\" onclick=\"cntPlus(this)\"> \
-                <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
-            </button> \
-            <img src=\"resources/elements/arrow-right.png\" alt=\"->\"> \
-            <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
-                <img src=\"/web/resources/elements/minus.png" alt=\"Minus\"> \
-            </button> \
-            <input inputmode=\"numeric\" id=\"' + name + 'LvlTo\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"60\" value=\"' + lvlTo + '\" type=\"number\"> \
-            <button class="object__cnt-button" onclick=\"cntPlus(this)\"> \
-                <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
-            </button> \
-        </div> \
-        <div class=\"object__counter\"> \
-            <text>Insight:</text> \
-            <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
-                <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
-            </button> \
-            <input inputmode=\"numeric\" id=\"' + name + 'InsFrom\" required pattern=\"[0-9]{,1}+$\" min=\"0\" max=\"3\" value=\"' + insFrom + '\" type=\"number\"> \
-            <button class=\"object__cnt-button\" onclick=\"cntPlus(this)\"> \
-                <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
-            </button> \
-            <img src=\"resources/elements/arrow-right.png\" alt=\"->\"> \
-            <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
-                <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
-            </button> \
-            <input inputmode=\"numeric\" id=\"' + name + 'InsTo\" required pattern=\"[0-9]{,1}+$\" min=\"0\" max=\"3\" value=\"' + insTo + '\" type=\"number\"> \
-            <button class=\"object__cnt-button\" onclick=\"cntPlus(this)\"> \
-                <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
-            </button> \
-        </div> \
-        <div class=\"object__counter\"> \
-            <text>Resonate:</text> \
-            <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
-                <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
-            </button> \
-            <input inputmode=\"numeric\" id=\"' + name + 'ResFrom\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"3\" value=\"' + resFrom + '\" type=\"number\"> \
-            <button class="object__cnt-button" onclick=\"cntPlus(this)\"> \
-                <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
-            </button> \
-            <img src=\"resources/elements/arrow-right.png\" alt=\"->\"> \
-            <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
-                <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
-            </button> \
-            <input inputmode=\"numeric\" id=\"' + name + 'ResTo\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"3\" value=\"' + resTo + '\" type=\"number\"> \
-            <button class=\"object__cnt-button\" onclick=\"cntPlus(this)\"> \
-                <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
-            </button> \
-        </div> \
-    </div>'
+    var obj = e.parentNode.parentNode.parentNode;
+    var obj2 = e.parentNode.parentNode;
+    var pos = Array.prototype.indexOf.call(obj.childNodes, obj2);
+    obj.removeChild(obj2);
+    str = '<div class=\"object\"> \
+            <div class=\"object__head ' + rar + '\"> \
+                <img src=\"' + path + '\" alt=\"' + name + 'Icon\"> \
+                <text>' + name + '</text> \
+                <button class=\"object__button\" onclick=\"saveRedactChar(this, \'' + name + '\', \'' + path + '\', \'' + rar +  '\')\"> \
+                    <img src=\"/web/resources/elements/ok.png\" alt=\"Ok\"> \
+                </button> \
+                <button class=\"object__button\" onclick=\"cancelRedactChar(this, \'' + name + '\', \'' + path + '\', \'' + rar + 
+                '\', ' + lvlFrom + ', ' + lvlTo + ', ' + insFrom + ', ' + insTo + ', ' + resFrom + ', ' + resTo + ')\"> \
+                    <img src=\"/web/resources/elements/cancel.png\" alt=\"Cancel\"> \
+                </button> \
+            </div> \
+            <div class=\"object__counter\"> \
+                <text>Level:</text> \
+                <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
+                    <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
+                </button> \
+                <input inputmode=\"numeric\" id=\"' + name + 'LvlFrom\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"60\" value=\"' + lvlFrom + '\" type=\"number\"> \
+                <button class=\"object__cnt-button\" onclick=\"cntPlus(this)\"> \
+                    <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
+                </button> \
+                <img src=\"resources/elements/arrow-right.png\" alt=\"->\"> \
+                <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
+                    <img src=\"/web/resources/elements/minus.png" alt=\"Minus\"> \
+                </button> \
+                <input inputmode=\"numeric\" id=\"' + name + 'LvlTo\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"60\" value=\"' + lvlTo + '\" type=\"number\"> \
+                <button class="object__cnt-button" onclick=\"cntPlus(this)\"> \
+                    <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
+                </button> \
+            </div> \
+            <div class=\"object__counter\"> \
+                <text>Insight:</text> \
+                <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
+                    <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
+                </button> \
+                <input inputmode=\"numeric\" id=\"' + name + 'InsFrom\" required pattern=\"[0-9]{,1}+$\" min=\"0\" max=\"3\" value=\"' + insFrom + '\" type=\"number\"> \
+                <button class=\"object__cnt-button\" onclick=\"cntPlus(this)\"> \
+                    <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
+                </button> \
+                <img src=\"resources/elements/arrow-right.png\" alt=\"->\"> \
+                <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
+                    <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
+                </button> \
+                <input inputmode=\"numeric\" id=\"' + name + 'InsTo\" required pattern=\"[0-9]{,1}+$\" min=\"0\" max=\"3\" value=\"' + insTo + '\" type=\"number\"> \
+                <button class=\"object__cnt-button\" onclick=\"cntPlus(this)\"> \
+                    <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
+                </button> \
+            </div> \
+            <div class=\"object__counter\"> \
+                <text>Resonate:</text> \
+                <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
+                    <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
+                </button> \
+                <input inputmode=\"numeric\" id=\"' + name + 'ResFrom\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"3\" value=\"' + resFrom + '\" type=\"number\"> \
+                <button class="object__cnt-button" onclick=\"cntPlus(this)\"> \
+                    <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
+                </button> \
+                <img src=\"resources/elements/arrow-right.png\" alt=\"->\"> \
+                <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
+                    <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
+                </button> \
+                <input inputmode=\"numeric\" id=\"' + name + 'ResTo\" required pattern=\"[0-9]{,2}+$\" min=\"1\" max=\"3\" value=\"' + resTo + '\" type=\"number\"> \
+                <button class=\"object__cnt-button\" onclick=\"cntPlus(this)\"> \
+                    <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
+                </button> \
+            </div> \
+        </div>';
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(str, 'text/html');
+    const element = doc.body.firstChild;
+    obj.insertBefore(element, obj.childNodes[pos]);
 }
 
 function saveRedactChar(e, name, path, rar) {
@@ -92,8 +98,11 @@ function saveRedactChar(e, name, path, rar) {
         UIkit.notification({message: 'Wrong parameters', status: 'danger' ,timeout: 5000})
         return
     }
+    var obj2 = e.parentNode.parentNode
+    var pos = Array.prototype.indexOf.call(obj.childNodes, obj2);
+    obj.removeChild(obj2)
 
-    obj.innerHTML = 
+    str = 
         '<div class=\"object\"> \
             <div class=\"object__head ' + rar + '\"> \
                 <img src=\"' + path + '\" alt=\"' + name + 'Icon\"> \
@@ -129,11 +138,18 @@ function saveRedactChar(e, name, path, rar) {
             <div class=\"object__bot\"> \
             </div> \
         </div>'
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(str, 'text/html');
+    const element = doc.body.firstChild;
+    obj.insertBefore(element, obj.childNodes[pos]);
 }
 
 function cancelRedactChar(e, name, path, rar, lvlFrom, lvlTo, insFrom, insTo, resFrom, resTo) {
     var obj = e.parentNode.parentNode.parentNode
-    obj.innerHTML =
+    var obj2 = e.parentNode.parentNode
+    var pos = Array.prototype.indexOf.call(obj.childNodes, obj2);
+    obj.removeChild(obj2)
+    str = 
         '<div class=\"object\"> \
             <div class=\"object__head ' + rar + '\"> \
                 <img src=\"' + path + '\" alt=\"' + name + 'Icon\"> \
@@ -169,59 +185,70 @@ function cancelRedactChar(e, name, path, rar, lvlFrom, lvlTo, insFrom, insTo, re
             <div class=\"object__bot\"> \
             </div> \
         </div>'
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(str, 'text/html');
+    const element = doc.body.firstChild;
+    obj.insertBefore(element, obj.childNodes[pos]);
 }
 
 function redactPsych(e, name, path, rar, lvlFrom, lvlTo, ascFrom, ascTo) {
     var obj = e.parentNode.parentNode.parentNode
-    obj.innerHTML = '<div class=\"object\"> \
+    var obj2 = e.parentNode.parentNode
+    var pos = Array.prototype.indexOf.call(obj.childNodes, obj2);
+    obj.removeChild(obj2)
+    str = '<div class=\"object\"> \
         <div class=\"object__head ' + rar + '\"> \
             <img src=\"' + path + '\" alt=\"' + name + 'Icon\"> \
             <text>' + name + '</text> \
             <button class=\"object__button\" onclick=\"saveRedactPsych(this, \'' + name + '\', \'' + path + '\', \'' + rar +  '\')\"> \
-                <img src=\"resources/elements/ok.png\" alt=\"Ok\"> \
+                <img src=\"/web/resources/elements/ok.png\" alt=\"Ok\"> \
             </button> \
             <button class=\"object__button\" onclick=\"cancelRedactPsych(this, \'' + name + '\', \'' + path + '\', \'' + rar + 
               '\', ' + lvlFrom + ', ' + lvlTo + ', ' + ascFrom + ', ' + ascTo + ')\"> \
-                <img src=\"resources/elements/cancel.png\" alt=\"Cancel\"> \
+                <img src=\"/web/resources/elements/cancel.png\" alt=\"Cancel\"> \
             </button> \
         </div> \
         <div class=\"object__counter\"> \
             <text>Level:</text> \
             <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
-                <img src=\"resources/elements/minus.png\" alt=\"Minus\"> \
+                <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
             </button> \
             <input inputmode=\"numeric\" id=\"' + name + 'LvlFrom\" required pattern=\"[0-9]{,1}+$\" min=\"1\" max=\"60\" value=\"' + lvlFrom + '\" type=\"number\"> \
             <button class=\"object__cnt-button\" onclick=\"cntPlus(this)\"> \
-                <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
             </button> \
             <img src=\"resources/elements/arrow-right.png\" alt=\"->\"> \
             <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
-                <img src=\"resources/elements/minus.png" alt=\"Minus\"> \
+                <img src=\"/web/resources/elements/minus.png" alt=\"Minus\"> \
             </button> \
             <input inputmode=\"numeric\" id=\"' + name + 'LvlTo\" required pattern=\"[0-9]{,1}+$\" min=\"1\" max=\"60\" value=\"' + lvlTo + '\" type=\"number\"> \
             <button class="object__cnt-button" onclick=\"cntPlus(this)\"> \
-                <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
             </button> \
         </div> \
         <div class=\"object__counter\"> \
             <text>Ascent:</text> \
             <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
-                <img src=\"resources/elements/minus.png\" alt=\"Minus\"> \
+                <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
             </button> \
             <input inputmode=\"numeric\" id=\"' + name + 'AscFrom\" required pattern=\"[0-9]{,1}+$\" min=\"0\" max=\"3\" value=\"' + ascFrom + '\" type=\"number\"> \
             <button class=\"object__cnt-button\" onclick=\"cntPlus(this)\"> \
-                <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
             </button> \
             <img src=\"resources/elements/arrow-right.png\" alt=\"->\"> \
             <button class=\"object__cnt-button\" onclick=\"cntMinus(this)\"> \
-                <img src=\"resources/elements/minus.png\" alt=\"Minus\"> \
+                <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
             </button> \
             <input inputmode=\"numeric\" id=\"' + name + 'AscTo\" required pattern=\"[0-9]{,1}+$\" min=\"0\" max=\"3\" value=\"' + ascTo + '\" type=\"number\"> \
             <button class=\"object__cnt-button\" onclick=\"cntPlus(this)\"> \
-                <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
             </button> \
         </div> \
     </div>'
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(str, 'text/html');
+    const element = doc.body.firstChild;
+    obj.insertBefore(element, obj.childNodes[pos]);
 }
 
 function saveRedactPsych(e, name, path, rar) {
@@ -239,8 +266,11 @@ function saveRedactPsych(e, name, path, rar) {
         UIkit.notification({message: 'Wrong parameters', status: 'danger' ,timeout: 5000})
         return
     }
+    var obj2 = e.parentNode.parentNode
+    var pos = Array.prototype.indexOf.call(obj.childNodes, obj2);
+    obj.removeChild(obj2)
 
-    obj.innerHTML = 
+    str = 
         '<div class=\"object\"> \
             <div class=\"object__head ' + rar + '\"> \
                 <img src=\"' + path + '\" alt=\"' + name + 'Icon\"> \
@@ -269,11 +299,18 @@ function saveRedactPsych(e, name, path, rar) {
             <div class=\"object__bot\"> \
             </div> \
         </div>'
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(str, 'text/html');
+    const element = doc.body.firstChild;
+    obj.insertBefore(element, obj.childNodes[pos]);
 }
 
 function cancelRedactPsych(e, name, path, rar, lvlFrom, lvlTo, ascFrom, ascTo) {
     var obj = e.parentNode.parentNode.parentNode
-    obj.innerHTML =
+    var obj2 = e.parentNode.parentNode
+    var pos = Array.prototype.indexOf.call(obj.childNodes, obj2);
+    obj.removeChild(obj2)
+    str = 
         '<div class=\"object\"> \
             <div class=\"object__head ' + rar + '\"> \
                 <img src=\"' + path + '\" alt=\"' + name + 'Icon\"> \
@@ -302,4 +339,8 @@ function cancelRedactPsych(e, name, path, rar, lvlFrom, lvlTo, ascFrom, ascTo) {
             <div class=\"object__bot\"> \
             </div> \
         </div>'
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(str, 'text/html');
+    const element = doc.body.firstChild;
+    obj.insertBefore(element, obj.childNodes[pos]);
 }

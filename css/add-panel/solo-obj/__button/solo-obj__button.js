@@ -5,7 +5,7 @@ function addSavePsychube(name, path, rar) {
     var lvlFrom = document.getElementById(name + 'LvlFrom').value;
     var panel = document.getElementsByClassName("object-panel").item(0);
 
-    try{       
+    try{
         if (!validatePsychValues(lvlFrom, lvlTo, ascFrom, ascTo)){
             throw new Error("Incorrect parameters");
         }
@@ -14,6 +14,20 @@ function addSavePsychube(name, path, rar) {
         return
     }
     
+    try{
+        for (var child in panel.childNodes){
+            if (child > 0){
+                if (panel.childNodes[child].classList.contains("object")){
+                    if (panel.childNodes[child].childNodes.item(1).textContent.includes(name))
+                        throw new Error("Already exists");
+                }
+            }
+        }
+    }catch(e){
+        UIkit.notification({message: 'Psychube already exists', status: 'danger' ,timeout: 5000})
+        return
+    }
+
     panel.innerHTML += '<div class=\"object\"> \
         <div class=\"object__head ' + rar + '\"> \
             <img src=\"' + path + '\" alt=\"' + name + 'Icon\"> \
@@ -70,6 +84,20 @@ function addSaveChar(name, path, rar) {
         }
     }catch(e){
         UIkit.notification({message: 'Wrong parameters', status: 'danger' ,timeout: 5000})
+        return
+    }
+
+    try{
+        for (var child in panel.childNodes){
+            if (child > 0){
+                if (panel.childNodes[child].classList.contains("object")){
+                    if (panel.childNodes[child].childNodes.item(1).textContent.includes(name))
+                        throw new Error("Already exists");
+                }
+            }
+        }
+    }catch(e){
+        UIkit.notification({message: 'Character already exists', status: 'danger' ,timeout: 5000})
         return
     }
 
