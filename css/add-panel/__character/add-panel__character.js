@@ -3,17 +3,24 @@ async function soloChar(e){
     panel.innerHTML = '';
     panel.innerHTML += "<div class=\"add-panel__preloader\"><div></div></div>";
     var chars;
-    await fetch('https://my-json-server.typicode.com/GarnetAki/web/Characters')
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            chars = data;
-        });
+    try{
+        await fetch('https://my-json-server.typicode.com/GarnetAki/web/Characters')
+            .then((response) => {
+                if (response.status >= 400 && response.status < 600) {
+                    throw new Error("Bad response from server");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                chars = data;
+            });
+    }catch(e){
+        panel.innerHTML = "<text class=\"error\">Bad response from server</text>"
+        return
+    }
 
     panel.innerHTML = panel.innerHTML.replace("<div class=\"add-panel__preloader\"><div></div></div>", "");
     
-    console.log(e.textContent);
     for (var char in chars) {
         if (chars[char]["name"] == e.textContent){
             var rar = "six_star";
@@ -27,65 +34,65 @@ async function soloChar(e){
                 <div class=\"solo-obj__head ' + rar + '\"> \
                     <img src=\"' + chars[char]["icon_path"] + '\" alt=\"' + chars[char]["name"] + 'Icon\"> \
                     <text>' + chars[char]["name"] + '</text> \
-                    <button class="solo-obj__button"> \
-                        <img src=\"resources/elements/ok.png" alt="Ok"> \
+                    <button class="solo-obj__button" onclick=\"addSaveChar(\'' + chars[char]["name"] + '\', \'' + chars[char]["icon_path"] + '\', \'' + rar +  '\')\"> \
+                        <img src=\"/web/resources/elements/ok.png" alt="Ok"> \
                     </button> \
                     <button class=\"solo-obj__button\" onclick=\"addClose(this)\"> \
-                        <img src=\"resources/elements/cancel.png\" alt="Cancel"> \
+                        <img src=\"/web/resources/elements/cancel.png\" alt="Cancel"> \
                     </button> \
                 </div> \
                 <div class=\"solo-obj__counter\"> \
                     <text>Level:</text> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/minus.png\" alt=\"Minus\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
+                        <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\"> \
-                    <button class="solo-obj__cnt-button"> \
-                        <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <button class="solo-obj__cnt-button" onclick=\"cntPlus(this)\"> \
+                        <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
-                    <img src=\"resources/elements/arrow-right.png\" alt=\"->\"> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/minus.png\" alt=\"Minus\"> \
+                    <img src=\"/web/resources/elements/arrow-right.png\" alt=\"->\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
+                        <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\"> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntPlus(this)\"> \
+                        <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
                 </div> \
                 <div class=\"solo-obj__counter\"> \
                     <text>Insight:</text> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/minus.png\" alt=\"Minus\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
+                        <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\"> \
-                    <button class="solo-obj__cnt-button"> \
-                        <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <button class="solo-obj__cnt-button" onclick=\"cntPlus(this)\"> \
+                        <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
-                    <img src=\"resources/elements/arrow-right.png\" alt=\"->\"> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/minus.png\" alt=\"Minus\"> \
+                    <img src=\"/web/resources/elements/arrow-right.png\" alt=\"->\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
+                        <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\"> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <button class=\"solo-obj__cnt-button\ onclick=\"cntPlus(this)\""> \
+                        <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
                 </div> \
                 <div class=\"solo-obj__counter\"> \
                     <text>Resonate:</text> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/minus.png\" alt=\"Minus\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
+                        <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\"> \
-                    <button class="solo-obj__cnt-button"> \
-                        <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <button class="solo-obj__cnt-button" onclick=\"cntPlus(this)\"> \
+                        <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
-                    <img src=\"resources/elements/arrow-right.png\" alt=\"->\"> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/minus.png\" alt=\"Minus\"> \
+                    <img src=\"/web/resources/elements/arrow-right.png\" alt=\"->\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
+                        <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\"> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntPlus(this)\"> \
+                        <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
                 </div> \
             </div>'
@@ -98,17 +105,24 @@ async function soloPsyhc(e){
     panel.innerHTML = '';
     panel.innerHTML += "<div class=\"add-panel__preloader\"><div></div></div>";
     var psychs;
-    await fetch('https://my-json-server.typicode.com/GarnetAki/web/Psychubes')
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            psychs = data;
-        });
+    try{
+        await fetch('https://my-json-server.typicode.com/GarnetAki/web/Psychubes')
+            .then((response) => {
+                if (response.status >= 400 && response.status < 600) {
+                    throw new Error("Bad response from server");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                psychs = data;
+            });
+    }catch(e){
+        panel.innerHTML = "<text class=\"error\">Bad response from server</text>"
+        return
+    }
 
     panel.innerHTML = panel.innerHTML.replace("<div class=\"add-panel__preloader\"><div></div></div>", "");
     
-    console.log(e.textContent);
     for (var psych in psychs) {
         if (psychs[psych]["name"] == e.textContent){
             var rar = "six_star";
@@ -122,47 +136,47 @@ async function soloPsyhc(e){
                 <div class=\"solo-obj__head ' + rar + '\"> \
                     <img src=\"' + psychs[psych]["icon_path"] + '\" alt=\"' + psychs[psych]["name"] + 'Icon\"> \
                     <text>' + psychs[psych]["name"] + '</text> \
-                    <button class="solo-obj__button"> \
-                        <img src=\"resources/elements/ok.png" alt="Ok"> \
+                    <button class="solo-obj__button" onclick=\"addSavePsychube(\'' + psychs[psych]["name"] + '\', \'' + psychs[psych]["icon_path"] + '\', \'' + rar +  '\')\"> \
+                        <img src=\"/web/resources/elements/ok.png" alt="Ok"> \
                     </button> \
                     <button class=\"solo-obj__button\" onclick=\"addClose(this)\"> \
-                        <img src=\"resources/elements/cancel.png\" alt="Cancel"> \
+                        <img src=\"/web/resources/elements/cancel.png\" alt="Cancel"> \
                     </button> \
                 </div> \
                 <div class=\"solo-obj__counter\"> \
                     <text>Level:</text> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/minus.png\" alt=\"Minus\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
+                        <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\"> \
-                    <button class="solo-obj__cnt-button"> \
-                        <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <button class="solo-obj__cnt-button" onclick=\"cntPlus(this)\"> \
+                        <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
-                    <img src=\"resources/elements/arrow-right.png\" alt=\"->\"> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/minus.png\" alt=\"Minus\"> \
+                    <img src=\"/web/resources/elements/arrow-right.png\" alt=\"->\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
+                        <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\"> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntPlus(this)\"> \
+                        <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
                 </div> \
                 <div class=\"solo-obj__counter\"> \
                     <text>Ascent:</text> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/minus.png\" alt=\"Minus\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
+                        <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\"> \
-                    <button class="solo-obj__cnt-button"> \
-                        <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <button class="solo-obj__cnt-button" onclick=\"cntPlus(this)\"> \
+                        <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
-                    <img src=\"resources/elements/arrow-right.png\" alt=\"->\"> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/minus.png\" alt=\"Minus\"> \
+                    <img src=\"/web/resources/elements/arrow-right.png\" alt=\"->\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntMinus(this)\"> \
+                        <img src=\"/web/resources/elements/minus.png\" alt=\"Minus\"> \
                     </button> \
-                    <input inputmode=\"numeric\" min=\"0\" value=\"0\"> \
-                    <button class=\"solo-obj__cnt-button\"> \
-                        <img src=\"resources/elements/plus.png\" alt=\"Plus\"> \
+                    <input inputmode=\"numeric\" min=\"0\" value=\"0\" type=\"number\"> \
+                    <button class=\"solo-obj__cnt-button\" onclick=\"cntPlus(this)\"> \
+                        <img src=\"/web/resources/elements/plus.png\" alt=\"Plus\"> \
                     </button> \
                 </div> \
             </div>'

@@ -18,13 +18,22 @@ async function addChar(e) {
     
         panel.innerHTML += "<div class=\"add-panel__preloader\"><div></div></div>";
         var chars;
-        await fetch('https://my-json-server.typicode.com/GarnetAki/web/Characters')
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                chars = data;
-            });
+        try{
+            await fetch('https://my-json-server.typicode.com/GarnetAki/web/Characters')
+                .then((response) => {
+                    if (response.status >= 400 && response.status < 600) {
+                        throw new Error("Bad response from server");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    chars = data;
+                });
+        }catch(e){
+            panel.innerHTML = panel.innerHTML.replace("<div class=\"add-panel__preloader\"><div></div></div>", "");
+            panel.innerHTML += "<text class=\"error\">Bad response from server</text>"
+            return
+        }
     
         panel.innerHTML = panel.innerHTML.replace("<div class=\"add-panel__preloader\"><div></div></div>", "");
         
@@ -55,13 +64,22 @@ async function addPsychube(e) {
     
         panel.innerHTML += "<div class=\"add-panel__preloader\"><div></div></div>";
         var psychs;
-        await fetch('https://my-json-server.typicode.com/GarnetAki/web/Psychubes')
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                psychs = data;
-            });
+        try{
+            await fetch('https://my-json-server.typicode.com/GarnetAki/web/Psychubes')
+                .then((response) => {
+                    if (response.status >= 400 && response.status < 600) {
+                        throw new Error("Bad response from server");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    psychs = data;
+                });
+        }catch(e){
+            panel.innerHTML = panel.innerHTML.replace("<div class=\"add-panel__preloader\"><div></div></div>", "");
+            panel.innerHTML += "<text class=\"error\">Bad response from server</text>"
+            return
+        }
     
         panel.innerHTML = panel.innerHTML.replace("<div class=\"add-panel__preloader\"><div></div></div>", "");
         
@@ -72,21 +90,51 @@ async function addPsychube(e) {
     }
 }
 
-function addMaterials(e) {
-    var buttons = document.getElementsByClassName("setup-zone").item(0);
+async function addMaterials(e) {
+    if (!e.classList.contains("pressed")){
+        var buttons = document.getElementsByClassName("setup-zone").item(0);
 
-    for (var child of buttons.children) {
-        if (child.classList.contains("pressed"))
-            child.classList.remove("pressed");
+        for (var child of buttons.children) {
+            if (child.classList.contains("pressed"))
+                child.classList.remove("pressed");
+        }
+        
+        e.classList.toggle("pressed");
+
+        var panel = document.getElementById("add");
+        panel.innerHTML = '';
+        
+        panel.style.display = "inline-flex";
+        panel.innerHTML += "<button class=\"add-panel__button\" onclick=\"addOk(this)\">SAVE</button><button class=\"add-panel__button\" onclick=\"addCancel(this)\">CANCEL</button>";
+
+        panel.innerHTML += "<div class=\"add-panel__preloader\"><div></div></div>";
+
+        var materials;
+        try{
+            await fetch('https://my-json-server.typicode.com/GarnetAki/web/Materials')
+                .then((response) => {
+                    if (response.status >= 400 && response.status < 600) {
+                        throw new Error("Bad response from server");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    materials = data;
+                });
+        }catch(e){
+            panel.innerHTML = panel.innerHTML.replace("<div class=\"add-panel__preloader\"><div></div></div>", "");
+            panel.innerHTML += "<text class=\"error\">Bad response from server</text>"
+            return
+        }
+        
+        
+        panel.innerHTML = panel.innerHTML.replace("<div class=\"add-panel__preloader\"><div></div></div>", "");
+        
+        for (var material in materials) {
+            panel.innerHTML += '<div class=\"add-panel__material\"> \
+                    <img src=\"' + psychs[material]["icon_path"] + '\"> \
+                    <input inputmode="numeric" min="0" value="0"> \
+                </div>'
+        }
     }
-    
-    e.classList.toggle("pressed");
-
-    var panel = document.getElementById("add");
-    panel.innerHTML = '';
-    
-    panel.style.display = "inline-flex";
-    panel.innerHTML += "<button class=\"add-panel__button\" onclick=\"addOk(this)\">SAVE</button><button class=\"add-panel__button\" onclick=\"addCancel(this)\">CANCEL</button>";
-
-    panel.innerHTML += "<div class=\"add-panel__preloader\"><div></div></div>";
 }
